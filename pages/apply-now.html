@@ -36,7 +36,123 @@
 
     <link rel="icon" type="image/webp" href="../assets/static/Favicon.webp">
     <link rel="stylesheet" href="../assets/css/style.css">
-    
+    <style>
+        /* ================= BITRIX FORM RESET ================= */
+        .b24-form-wrapper {
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+        }
+
+        .b24-form-header {
+            display: none !important;
+        }
+
+        .b24-form-field {
+            margin-bottom: 24px !important;
+        }
+
+        /* Remove Bitrix auto separators */
+        .b24-form-separator,
+        .b24-form-field-separator,
+        .b24-form-field::before,
+        .b24-form-field::after {
+            display: none !important;
+            content: none !important;
+            height: 0 !important;
+            border: none !important;
+        }
+
+        /* ================= LABEL HANDLING ================= */
+        .b24-form-control-label {
+            position: absolute !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        /* ================= INPUT FIELDS ================= */
+        .b24-form-control {
+            width: 100% !important;
+            background: #f7fafc !important;
+            border: 2px solid #e2e8f0 !important;
+            border-radius: 12px !important;
+            padding: 14px 18px !important;
+            font-size: 15px !important;
+            font-family: 'Poppins', sans-serif !important;
+            color: #1a202c !important;
+            box-shadow: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .b24-form-control::placeholder {
+            color: #a0aec0 !important;
+            font-weight: 400 !important;
+        }
+
+        .b24-form-control:focus {
+            border-color: #00A0E3 !important;
+            background: #ffffff !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(0, 160, 227, 0.1) !important;
+        }
+
+        /* ================= DROPDOWN ================= */
+        .b24-form-dropdown {
+            border-radius: 12px !important;
+            border: 2px solid #e2e8f0 !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+            background: white !important;
+        }
+
+        .b24-form-dropdown-item {
+            padding: 12px 18px !important;
+            font-size: 15px !important;
+            font-family: 'Poppins', sans-serif !important;
+            color: #1a202c !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .b24-form-dropdown-item:hover {
+            background: #f7fafc !important;
+            color: #00A0E3 !important;
+        }
+
+        /* ================= SUBMIT BUTTON ================= */
+        .b24-form-btn {
+            width: 100% !important;
+            margin-top: 28px !important;
+            padding: 16px 24px !important;
+            border-radius: 12px !important;
+            background: linear-gradient(135deg, #00A0E3 0%, #0284c7 100%) !important;
+            color: #ffffff !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            border: none !important;
+            font-family: 'Poppins', sans-serif !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(0, 160, 227, 0.4) !important;
+        }
+
+        .b24-form-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 160, 227, 0.5) !important;
+        }
+
+        .b24-form-btn:active {
+            transform: translateY(0) !important;
+        }
+
+        /* ================= FOOTER TEXT ================= */
+        .b24-form-sign {
+            margin-top: 24px !important;
+            font-size: 12px !important;
+            color: #a0aec0 !important;
+            text-align: center !important;
+        }
+    </style>
 </head>
 
 <body class="antialiased bg-gray-50">
@@ -65,18 +181,21 @@
                         <div
                             class="absolute hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-64 mt-0 z-50">
                             <a href="../pages/courses/cardio-pulmonary.html"
-                                class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Cardio Pulmonary Perfusion Care Technology</a>
+                                class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Cardio Pulmonary Perfusion
+                                Care Technology</a>
                             <a href="../pages/courses/operation-theatre.html"
-                                class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Operation Theatre and Anaesthesia Technology</a>
+                                class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Operation Theatre and
+                                Anaesthesia Technology</a>
                             <a href="../pages/courses/physician-assistant.html"
                                 class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Physician Assistant</a>
                             <a href="../pages/courses/radiography.html"
-                                class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Radiography and Imaging Technology</a>
+                                class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Radiography and Imaging
+                                Technology</a>
                             <a href="../pages/courses/cardiac-technology.html"
                                 class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Cardiac Technology</a>
                             <a href="../pages/courses/dialysis-therapy.html"
                                 class="block px-4 py-2 hover:bg-primary-50 text-gray-700">Dialysis Technology</a>
-                            
+
                             <a href="../pages/courses/B.Optom.html"
                                 class="block px-4 py-2 hover:bg-primary-50 text-gray-700">B.Optom</a>
                             <a href="../pages/courses/respiratory-therapy.html"
@@ -160,7 +279,8 @@
                             <a href="../pages/courses/cardio-pulmonary.html"
                                 class="block py-1 hover:text-primary-600">Cardio Pulmonary Perfusion Care Technology</a>
                             <a href="../pages/courses/operation-theatre.html"
-                                class="block py-1 hover:text-primary-600">Operation Theatre and Anaesthesia Technology</a>
+                                class="block py-1 hover:text-primary-600">Operation Theatre and Anaesthesia
+                                Technology</a>
                             <a href="../pages/courses/physician-assistant.html"
                                 class="block py-1 hover:text-primary-600">Physician Assistant</a>
                             <a href="../pages/courses/radiography.html"
@@ -169,7 +289,7 @@
                                 class="block py-1 hover:text-primary-600">Cardiac Technology</a>
                             <a href="../pages/courses/dialysis-therapy.html"
                                 class="block py-1 hover:text-primary-600">Dialysis Technology</a>
-                            
+
                             <a href="../pages/courses/B.Optom.html"
                                 class="block py-1 hover:text-primary-600">B.Optom</a>
                             <a href="../pages/courses/respiratory-therapy.html"
@@ -254,7 +374,8 @@
             </nav>
 
             <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 leading-tight">Admissions 2026–27</h1>
-            <p class="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">Begin Your Journey in Allied Health Sciences</p>
+            <p class="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">Begin Your Journey in Allied
+                Health Sciences</p>
 
             <div class="mt-8 flex justify-center">
                 <div class="w-24 h-1 bg-primary-500 rounded-full"></div>
@@ -268,12 +389,14 @@
             <h2 class="text-4xl font-bold text-center mb-12">Admission Process</h2>
             <div class="space-y-8">
                 <div class="flex items-start">
-                    <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                    <div
+                        class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
                         <span class="text-2xl font-bold text-primary-600">1</span>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-2">Application Submission</h3>
-                        <p class="text-gray-700">Students must submit the admission enquiry form with basic details including name, contact information, and preferred course.</p>
+                        <p class="text-gray-700">Students must submit the admission enquiry form with basic details
+                            including name, contact information, and preferred course.</p>
                     </div>
                 </div>
                 <div class="flex items-start">
@@ -282,25 +405,30 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-2">Eligibility Verification</h3>
-                        <p class="text-gray-700">The admissions team verifies academic eligibility based on 10+2 qualification with Physics, Chemistry, and Biology (PCB).</p>
+                        <p class="text-gray-700">The admissions team verifies academic eligibility based on 10+2
+                            qualification with Physics, Chemistry, and Biology (PCB).</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                    <div
+                        class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
                         <span class="text-2xl font-bold text-green-600">3</span>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-2">Counselling / Interaction</h3>
-                        <p class="text-gray-700">Applicants may be invited for counselling or interaction to understand course options and career pathways in Allied Health Sciences.</p>
+                        <p class="text-gray-700">Applicants may be invited for counselling or interaction to understand
+                            course options and career pathways in Allied Health Sciences.</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                    <div
+                        class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
                         <span class="text-2xl font-bold text-primary-600">4</span>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-2">Admission Confirmation</h3>
-                        <p class="text-gray-700">Selected candidates receive admission confirmation after document verification and payment of the required fees.</p>
+                        <p class="text-gray-700">Selected candidates receive admission confirmation after document
+                            verification and payment of the required fees.</p>
                     </div>
                 </div>
             </div>
@@ -308,10 +436,48 @@
     </section>
 
     <!-- Admission and Enquiry Form -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-3xl text-primary-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Address</h3>
+                                <p class="text-gray-700">SNS College of Allied Health Sciences,<br>SNS Kalvi Nagar,
+                                    Sathy Main Road (NH-209),<br>Vazhiyampalayam, Saravanampatti Post,<br>Coimbatore -
+                                    641 035.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-3xl text-primary-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Phone</h3>
+                                <p class="text-gray-700">Admission: +91 99409 56789<br>Office: +91 75503 16701</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-3xl text-primary-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Email</h3>
+                                <p class="text-gray-700">General: office@snscahs.org<br>Admissions:
+                                    snsadmission@snsgroups.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-3xl text-primary-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Visit Us</h3>
+                                <p class="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00
+                                    PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-2xl shadow-2xl p-0 overflow-hidden border border-gray-100 max-w-2xl mx-auto w-full">
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
@@ -320,51 +486,25 @@
                             <h2 class="text-2xl font-bold text-gray-900">Admission and Enquiry Form</h2>
                         </div>
 
-                        <!-- Custom Native Form Matching Bitrix Styling -->
-                        <form action="#" method="POST" class="space-y-6">
-                            <div>
-                                <input type="text" name="student_name" placeholder="Full Name / Student Name *" required
-                                    class="w-full bg-[#f7fafc] border-2 border-[#e2e8f0] rounded-xl px-[18px] py-[14px] text-[15px] font-['Poppins'] text-[#1a202c] focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-primary-500/20 transition-all">
+                        <!-- Loading State -->
+                        <div class="text-center py-10" id="loading">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"
+                                style="border-top-color: #00A0E3;">
                             </div>
-                            
-                            <div>
-                                <input type="tel" name="mobile_number" placeholder="Mobile Number *" required
-                                    class="w-full bg-[#f7fafc] border-2 border-[#e2e8f0] rounded-xl px-[18px] py-[14px] text-[15px] font-['Poppins'] text-[#1a202c] focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-primary-500/20 transition-all">
-                            </div>
+                            <p class="text-gray-600">Loading form...</p>
+                        </div>
 
-                            <div>
-                                <input type="email" name="email_address" placeholder="Email Address *" required
-                                    class="w-full bg-[#f7fafc] border-2 border-[#e2e8f0] rounded-xl px-[18px] py-[14px] text-[15px] font-['Poppins'] text-[#1a202c] focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-primary-500/20 transition-all">
-                            </div>
-
-                            <div>
-                                <input type="text" name="city" placeholder="City *" required
-                                    class="w-full bg-[#f7fafc] border-2 border-[#e2e8f0] rounded-xl px-[18px] py-[14px] text-[15px] font-['Poppins'] text-[#1a202c] focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-primary-500/20 transition-all">
-                            </div>
-
-                            <div>
-                                <select name="course" required
-                                    class="w-full bg-[#f7fafc] border-2 border-[#e2e8f0] rounded-xl px-[18px] py-[14px] text-[15px] font-['Poppins'] text-[#1a202c] focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-primary-500/20 transition-all appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231a202c%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 18px top 50%; background-size: 12px auto;">
-                                    <option value="" disabled selected>Select Course *</option>
-                                    <option value="Cardio Pulmonary Perfusion Care Technology">Cardio Pulmonary Perfusion Care Technology</option>
-                                    <option value="Operation Theatre and Anaesthesia Technology">Operation Theatre and Anaesthesia Technology</option>
-                                    <option value="Radiography and Imaging Technology">Radiography and Imaging Technology</option>
-                                    <option value="Dialysis Technology">Dialysis Technology</option>
-                                    <option value="B.Optom">B.Optom</option>
-                                    <option value="Physician Assistant">Physician Assistant</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <textarea name="message" placeholder="Message / Enquiry" rows="4"
-                                    class="w-full bg-[#f7fafc] border-2 border-[#e2e8f0] rounded-xl px-[18px] py-[14px] text-[15px] font-['Poppins'] text-[#1a202c] focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-primary-500/20 transition-all"></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full mt-[28px] py-[16px] px-[24px] rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-[16px] font-semibold font-['Poppins'] shadow-[0_4px_15px_rgba(0,160,227,0.4)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,160,227,0.5)] active:translate-y-0 transition-all cursor-pointer">
-                                Apply Now
-                            </button>
-                        </form>
+                        <!-- Bitrix24 Form -->
+                        <div id="bitrix-form-container"></div>
+                        <script data-b24-form="inline/18/m4ecvi" data-skip-moving="true">
+                                (function (w, d, u) {
+                                    var s = d.createElement('script');
+                                    s.async = true;
+                                    s.src = u + '?' + (Date.now() / 180000 | 0);
+                                    var h = d.getElementsByTagName('script')[0];
+                                    h.parentNode.insertBefore(s, h);
+                                })(window, document, 'https://cdn.bitrix24.com/b11752903/crm/form/loader_18.js');
+                        </script>
                     </div>
                 </div>
             </div>
@@ -428,7 +568,7 @@
                                 Cardiac Technology</a></li>
                         <li><a href="../pages/courses/dialysis-therapy.html" class="hover:text-white transition">B.Sc.
                                 Dialysis Technology</a></li>
-                        
+
                         <li><a href="../pages/courses/B.Optom.html" class="hover:text-white transition">B.Sc.
                                 B.Optom</a></li>
                         <li><a href="../pages/courses/respiratory-therapy.html"
@@ -481,7 +621,133 @@
         </div>
     </footer>
 
-    
+    <script>
+        // Hide loading spinner when form loads
+        setTimeout(function () {
+            var loading = document.getElementById('loading');
+            if (loading) {
+                loading.style.display = 'none';
+            }
+        }, 3000);
+
+        // Advanced Form Fixer for Bitrix24
+        const snsColleges = [
+            "SNS College of Technology",
+            "SNS College of Engineering",
+            "Dr. SNS Rajalakshmi College of Arts and Science",
+            "SNS College of Allied Health Sciences",
+            "SNS College of Pharmacy",
+            "SNS College of Nursing",
+            "SNS College of Physiotherapy",
+            "Dr. SNS College of Education"
+        ];
+
+        function applyFormFixes() {
+            const fields = document.querySelectorAll('.b24-form-field');
+            fields.forEach(field => {
+                const label = field.querySelector('.b24-form-control-label');
+                const input = field.querySelector('.b24-form-control');
+                const container = field;
+
+                if (label) {
+                    const text = label.textContent.trim();
+
+                    // 1. Remove "Admission To Grade"
+                    if (text.includes('Admission To Grade')) {
+                        container.style.display = 'none';
+                        return;
+                    }
+
+                    // 2. Replace Academy field with "Choose College" Dropdown
+                    if (text.includes('SNSACD') || text.includes('SNS Academy') || text.includes('CBSE SCHOOL')) {
+                        label.textContent = "Choose College *";
+
+                        // If it's not already a select, swap it
+                        if (input && input.tagName !== 'SELECT' && !input.dataset.replaced) {
+                            const select = document.createElement('select');
+                            select.className = input.className;
+                            select.name = input.name;
+                            select.required = true;
+                            select.dataset.replaced = "true";
+
+                            select.innerHTML = '<option value="">Choose College *</option>' +
+                                snsColleges.map(c => `<option value="${c}">${c}</option>`).join('');
+
+                            input.parentNode.replaceChild(select, input);
+
+                            // Handle Bitrix dynamic value binding if needed
+                            select.addEventListener('change', (e) => {
+                                const event = new Event('input', { bubbles: true });
+                                select.dispatchEvent(event);
+                            });
+                        }
+                        return;
+                    }
+
+                    // 3. Rename "Name of the Child" -> "Name of the Candidate"
+                    if (text.includes('Name of the Child')) {
+                        label.textContent = text.replace('Name of the Child', 'Name of the Candidate');
+                        if (input && input.tagName !== 'SELECT') {
+                            let required = text.includes('*');
+                            input.placeholder = 'Name of the Candidate' + (required ? ' *' : '');
+                        }
+                    }
+
+                    // 4. Rename "Parent Name" -> "Parent / Guardian Name"
+                    if (text.includes('Parent Name')) {
+                        label.textContent = text.replace('Parent Name', 'Parent / Guardian Name');
+                        if (input && input.tagName !== 'SELECT') {
+                            let required = text.includes('*');
+                            input.placeholder = 'Parent / Guardian Name' + (required ? ' *' : '');
+                        }
+                    }
+
+                    // Generic Placeholder Fix for other fields
+                    if (input && input.tagName !== 'SELECT' && !input.placeholder) {
+                        let cleanText = text.replace(/\s*\*$/, '').trim();
+                        let required = text.includes('*');
+                        input.placeholder = required ? cleanText + ' *' : cleanText;
+                    }
+                }
+            });
+        }
+
+        // Use MutationObserver for robust dynamic loading handling
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.addedNodes.length) {
+                    applyFormFixes();
+                }
+            });
+        });
+
+        const target = document.getElementById('bitrix-form-container');
+        if (target) {
+            observer.observe(target, { childList: true, subtree: true });
+        }
+
+        // Initial apply just in case
+        applyFormFixes();
+
+        // Backup periodic check
+        const fixInterval = setInterval(() => {
+            applyFormFixes();
+            // If the form is clearly loaded and we've hidden fields, we can slow down or stop
+            if (document.querySelector('.b24-form')) {
+                // Keep running to ensure dynamic errors/re-renders stay fixed
+            }
+        }, 1000);
+
+        // Stop interval after 15 seconds to save resources
+        setTimeout(() => clearInterval(fixInterval), 15000);
+
+        // Form submission tracking
+        document.addEventListener('submit', function (e) {
+            if (e.target.classList.contains('b24-form')) {
+                console.log('Form submitted successfully!');
+            }
+        });
+    </script>
 </body>
 
 </html>
